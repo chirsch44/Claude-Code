@@ -11,7 +11,15 @@ This document provides comprehensive guidance for AI assistants working on this 
 
 ## Current Project State
 
-This repository is in its initial setup phase. The project will follow modern web development best practices with a focus on simplicity and maintainability.
+This repository contains a fully functional **Baseball Image Generator** web application. The project demonstrates modern web development best practices with clean, maintainable code suitable for beginners and as a template for similar interactive web applications.
+
+The application features:
+- Interactive image generation with smooth animations
+- Responsive design for all screen sizes
+- Accessibility features (keyboard navigation, proper ARIA labels)
+- Smart image rotation (no repeats until all images shown)
+- Error handling with fallback mechanisms
+- Modern ES6+ JavaScript patterns
 
 ## Repository Structure
 
@@ -19,16 +27,14 @@ This repository is in its initial setup phase. The project will follow modern we
 Claude-Code/
 ├── CLAUDE.md           # This file - AI assistant guide
 ├── README.md           # User-facing documentation
-├── index.html          # Main HTML entry point
+├── index.html          # Main HTML entry point (Baseball Generator)
 ├── css/                # Stylesheets
-│   └── styles.css      # Main stylesheet
-├── js/                 # JavaScript modules
-│   └── app.js          # Main application logic
-├── assets/             # Static assets
-│   ├── images/         # Image files
-│   └── fonts/          # Custom fonts
-└── docs/               # Additional documentation
+│   └── styles.css      # Main stylesheet with responsive design
+└── js/                 # JavaScript modules
+    └── app.js          # Main application logic with image generation
 ```
+
+**Note**: The application uses external image sources (Unsplash, Lorem Picsum) rather than local assets, so no `assets/` directory is currently needed.
 
 ## Development Workflows
 
@@ -198,21 +204,32 @@ try {
 
 ### Directory Guidelines
 
+**Current Structure**:
 ```
 css/
-  - styles.css          # Main global styles
-  - components.css      # Reusable component styles (if needed)
-  - utilities.css       # Utility classes (if needed)
+  - styles.css          # Main global styles (currently contains all styles)
 
 js/
-  - app.js              # Main application logic
-  - utils.js            # Utility functions (if needed)
-  - config.js           # Configuration (if needed)
+  - app.js              # Main application logic (Baseball Generator)
+```
+
+**When to Add New Directories/Files**:
+```
+css/
+  - components.css      # Create if you need reusable component styles
+  - utilities.css       # Create if you need utility classes
+
+js/
+  - utils.js            # Create if you need utility functions
+  - config.js           # Create if you need configuration constants
 
 assets/
-  images/               # All image files
-  fonts/                # Custom fonts
+  images/               # Create if adding local image files
+  fonts/                # Create if adding custom fonts
+  icons/                # Create if adding icon files
 ```
+
+**Note**: Currently, the application uses external CDN sources for images, so no local assets directory exists.
 
 ## Security Best Practices
 
@@ -444,19 +461,55 @@ When encountering errors:
 
 ### Current Features
 
-(To be updated as features are implemented)
+**Baseball Image Generator** (implemented in index.html, js/app.js, css/styles.css):
+- Random baseball image display from curated image pool (10 images)
+- Smart rotation system - tracks used images to prevent repeats until all are shown
+- Image preloading with loading states ("Loading..." button text)
+- Error handling with automatic fallback to alternative image sources
+- Smooth fade-in animations using CSS transitions
+- Cache-busting with timestamp parameters to ensure fresh image loads
+- Responsive button states (disabled during loading to prevent rapid clicking)
+- Hover effects on images and buttons for better user feedback
+- Mobile-responsive design with breakpoints at 768px
+- Keyboard accessibility (Enter and Space key support on button)
+- Proper semantic HTML5 structure (header, main, footer)
+- Uses external image sources: Unsplash API and Lorem Picsum
+
+**Technical Implementation Highlights**:
+- Event-driven architecture with DOMContentLoaded initialization
+- Array filtering to track and manage used images
+- Promise-based image loading with onload/onerror handlers
+- CSS gradient backgrounds for modern visual appeal
+- BEM-like CSS naming for maintainability
 
 ### Known Issues
 
-(To be updated as issues are discovered)
+None currently reported. The application functions as expected across modern browsers.
 
 ### Future Enhancements
 
-(To be updated with planned features)
+Potential improvements that could be added:
+- Image counter showing "X of Y images viewed"
+- Category selection (different sports or themes)
+- Local storage to remember viewing history across sessions
+- Share functionality for favorite images
+- Customizable image pool (user can add their own URLs)
+- Dark mode toggle
+- Sound effects on button click
+- Image download functionality
+- Fullscreen image view on click
 
 ---
 
 ## Version History
+
+- **v1.1** (2026-01-01): Updated CLAUDE.md to reflect actual implementation
+  - Updated project state to reflect completed Baseball Generator application
+  - Corrected repository structure to match actual files (removed non-existent directories)
+  - Added comprehensive current features documentation
+  - Listed technical implementation highlights
+  - Added future enhancement suggestions
+  - Clarified that external image sources are used (no local assets directory needed)
 
 - **v1.0** (2026-01-01): Initial CLAUDE.md creation
   - Established project structure
