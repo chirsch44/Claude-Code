@@ -19,16 +19,14 @@ This repository contains a **Baseball Image Generator** - a working interactive 
 Claude-Code/
 ├── CLAUDE.md           # This file - AI assistant guide
 ├── README.md           # User-facing documentation
-├── index.html          # Main HTML entry point
+├── index.html          # Main HTML entry point (Baseball Generator)
 ├── css/                # Stylesheets
-│   └── styles.css      # Main stylesheet
-├── js/                 # JavaScript modules
-│   └── app.js          # Main application logic
-├── assets/             # Static assets
-│   ├── images/         # Image files
-│   └── fonts/          # Custom fonts
-└── docs/               # Additional documentation
+│   └── styles.css      # Main stylesheet with gradient backgrounds
+└── js/                 # JavaScript modules
+    └── app.js          # Main application logic (image rotation, event handling)
 ```
+
+**Note**: The project uses external image sources (Unsplash, Picsum) rather than local assets. No local `assets/` directory is needed currently.
 
 ## Development Workflows
 
@@ -444,19 +442,55 @@ When encountering errors:
 
 ### Current Features
 
-(To be updated as features are implemented)
+**Baseball Image Generator (index.html)**
+- Interactive button-based image generation
+- Random selection from 10 baseball-themed images (Unsplash + Picsum)
+- Smart rotation algorithm - no repeats until all images shown
+- Image preloading with loading state feedback
+- Error handling with automatic fallback images
+- Smooth fade-in animations on image display
+- Keyboard accessibility (Enter/Space key support)
+- Responsive design for mobile and desktop
+- Gradient background (purple theme: #667eea to #764ba2)
+
+**Technical Implementation Details**:
+- Uses `DOMContentLoaded` event for initialization
+- Tracks used images in array to prevent repeats
+- Button disabled during image loading to prevent rapid clicks
+- Cache-busting parameters added to image URLs
+- Export pattern for potential future testing
 
 ### Known Issues
 
-(To be updated as issues are discovered)
+None currently reported. The application is stable and functional.
+
+**Potential Considerations**:
+- Images loaded from external sources require internet connection
+- No local fallback if both Unsplash and Picsum fail
+- No persistent state (image history resets on page reload)
 
 ### Future Enhancements
 
-(To be updated with planned features)
+**Potential Ideas** (not committed to):
+- Add a counter showing how many images viewed
+- Add sound effects on button click
+- Add animation variety (slide, zoom, flip transitions)
+- Allow users to favorite images
+- Add ability to download images
+- Add more image sources for variety
+- Implement localStorage to persist viewing history
+- Add category selection (different sports/themes)
 
 ---
 
 ## Version History
+
+- **v1.1** (2026-01-01): Updated CLAUDE.md with actual project state
+  - Documented Baseball Image Generator implementation
+  - Updated repository structure to reflect actual directories
+  - Added current features, technical implementation details
+  - Listed known considerations and future enhancement ideas
+  - Removed placeholder content
 
 - **v1.0** (2026-01-01): Initial CLAUDE.md creation
   - Established project structure
