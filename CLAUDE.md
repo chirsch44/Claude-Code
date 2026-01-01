@@ -11,7 +11,7 @@ This document provides comprehensive guidance for AI assistants working on this 
 
 ## Current Project State
 
-This repository is in its initial setup phase. The project will follow modern web development best practices with a focus on simplicity and maintainability.
+This repository contains a **Baseball Image Generator** - a working interactive web application that demonstrates modern web development best practices. The app displays random baseball images when users click a button, with smart rotation logic to avoid repeats until all images have been shown.
 
 ## Repository Structure
 
